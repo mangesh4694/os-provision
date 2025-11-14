@@ -59,3 +59,12 @@ sudo systemctl enable cups.service
 sudo systemctl start cups.service
 sudo lpadmin -p MFC7860DW -E -v socket://10.0.1.10 -P /usr/share/cups/model/MFC7860DW.ppd
 sudo brsaneconfig4 -a name=Brother_MFC7860DW model=MFC-7860DW ip=10.0.1.10
+
+
+#update system
+garuda-update
+
+#install freeipa client
+#first install the required dependencies through yay
+yay -S --noconfirm authselect certmonger oddjob-selinux autofs
+sudo pacman -S freeipa-client
